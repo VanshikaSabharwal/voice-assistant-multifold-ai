@@ -14,6 +14,8 @@ interface SidebarProps {
   activeConversationId: string | null;
   onSelectConversation: (id: string) => void;
   onDeleteConversation: (id: string) => void;
+  isOpen: boolean;
+  onClose: () => void;
 }
 
 function MicIcon() {
@@ -64,27 +66,53 @@ export default function Sidebar({
   activeConversationId,
   onSelectConversation,
   onDeleteConversation,
+  isOpen,
+  onClose,
 }: SidebarProps) {
   return (
-    <aside
-      className="flex flex-col w-64 h-full flex-shrink-0 select-none"
-      style={{ background: "#171717", borderRight: "1px solid #2a2a2a" }}
-    >
-      {/* Logo */}
-      <div className="flex items-center gap-2.5 px-4 py-5" style={{ borderBottom: "1px solid #2a2a2a" }}>
-        <div className="flex items-center justify-center w-8 h-8 rounded-lg" style={{ background: "#10a37f" }}>
-          <MicIcon />
+    <>
+      {/* Mobile backdrop */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 z-40 md:hidden"
+          style={{ background: "rgba(0,0,0,0.6)" }}
+          onClick={onClose}
+        />
+      )}
+      <aside
+        className={`fixed md:static inset-y-0 left-0 z-50 flex flex-col w-72 sm:w-64 h-full flex-shrink-0 select-none transition-transform duration-200 ${
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        } md:translate-x-0`}
+        style={{ background: "#171717", borderRight: "1px solid #2a2a2a" }}
+      >
+        {/* Logo */}
+        <div className="flex items-center justify-between gap-2.5 px-4 py-5" style={{ borderBottom: "1px solid #2a2a2a" }}>
+          <div className="flex items-center gap-2.5 min-w-0">
+            <div className="flex items-center justify-center w-8 h-8 rounded-lg flex-shrink-0" style={{ background: "#10a37f" }}>
+              <MicIcon />
+            </div>
+            <div className="min-w-0">
+              <p className="text-sm font-semibold truncate" style={{ color: "#ececec" }}>VoiceAssist</p>
+              <p className="text-xs truncate" style={{ color: "#8e8ea0" }}>Equipment Support</p>
+            </div>
+          </div>
+          <button
+            onClick={onClose}
+            className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center cursor-pointer md:hidden"
+            style={{ color: "#8e8ea0" }}
+            title={t.voiceModeClose}
+          >
+            ✕
+          </button>
         </div>
-        <div>
-          <p className="text-sm font-semibold" style={{ color: "#ececec" }}>VoiceAssist</p>
-          <p className="text-xs" style={{ color: "#8e8ea0" }}>Equipment Support</p>
-        </div>
-      </div>
 
       {/* New Chat */}
       <div className="px-3 py-3">
         <button
-          onClick={onNewChat}
+          onClick={() => {
+            onNewChat();
+            onClose();
+          }}
           className="flex items-center gap-2 w-full px-3 py-2.5 rounded-lg text-sm transition-colors cursor-pointer"
           style={{ color: "#ececec" }}
           onMouseEnter={e => (e.currentTarget.style.background = "#2a2a2a")}
@@ -116,7 +144,10 @@ export default function Sidebar({
               }}
             >
               <button
-                onClick={() => onSelectConversation(conv.id)}
+                onClick={() => {
+                  onSelectConversation(conv.id);
+                  onClose();
+                }}
                 className="flex items-center gap-2 flex-1 min-w-0 px-3 py-2 text-sm text-left cursor-pointer truncate"
                 style={{
                   color: activeConversationId === conv.id ? "#ececec" : "#8e8ea0",
@@ -167,6 +198,7 @@ export default function Sidebar({
           {t.autoDetect}
         </p>
       </div>
-    </aside>
+      </aside>
+    </>
   );
 }

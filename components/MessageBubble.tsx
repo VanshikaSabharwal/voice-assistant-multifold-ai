@@ -81,9 +81,9 @@ export default function MessageBubble({
 
   if (isUser) {
     return (
-      <div className="message-enter flex justify-end px-4 py-2">
+      <div className="message-enter flex justify-end px-3 sm:px-4 py-2">
         <div
-          className="max-w-[70%] rounded-2xl rounded-br-sm px-4 py-3 text-sm leading-relaxed"
+          className="max-w-[85%] sm:max-w-[70%] rounded-2xl rounded-br-sm px-4 py-3 text-sm leading-relaxed"
           style={{ background: "#2f2f2f", color: "#ececec" }}
         >
           {text}
@@ -93,7 +93,7 @@ export default function MessageBubble({
   }
 
   return (
-    <div className="message-enter flex items-start gap-3 px-4 py-2 max-w-3xl mx-auto w-full">
+    <div className="message-enter flex items-start gap-2 sm:gap-3 px-3 sm:px-4 py-2 max-w-3xl mx-auto w-full">
       <BotAvatar />
       <div className="flex-1 text-sm leading-relaxed pt-1" style={{ color: "#ececec" }}>
         {message.isTyping ? (

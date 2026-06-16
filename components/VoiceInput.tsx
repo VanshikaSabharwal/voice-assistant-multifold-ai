@@ -89,13 +89,13 @@ export default function VoiceInput({
   const canSend = text.trim().length > 0 && !isThinking;
 
   return (
-    <div className="px-4 pb-6 pt-2" style={{ background: "#212121" }}>
+    <div className="px-2 sm:px-4 pb-4 sm:pb-6 pt-2" style={{ background: "#212121" }}>
       <div
         className="mx-auto max-w-3xl rounded-2xl overflow-hidden transition-all"
         style={{ background: "#2f2f2f", border: "1px solid #3f3f3f" }}
       >
         {/* Textarea */}
-        <div className="px-4 pt-3 pb-2">
+        <div className="px-3 sm:px-4 pt-3 pb-2">
           <textarea
             ref={textareaRef}
             value={text}
@@ -115,9 +115,9 @@ export default function VoiceInput({
         </div>
 
         {/* Toolbar */}
-        <div className="flex items-center justify-between px-3 pb-3">
+        <div className="flex items-center justify-between gap-2 px-2 sm:px-3 pb-3">
           {/* Left: hint */}
-          <span className="text-xs" style={{ color: "#8e8ea0" }}>
+          <span className="text-xs truncate hidden sm:inline" style={{ color: "#8e8ea0" }}>
             {isRecording ? (
               <span className="flex items-center gap-1.5">
                 <span className="inline-block w-2 h-2 rounded-full bg-red-500 recording-pulse" />
@@ -129,7 +129,7 @@ export default function VoiceInput({
           </span>
 
           {/* Right: voice mode + mic + send */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5 sm:gap-2 ml-auto">
             {/* Voice mode button */}
             <button
               onClick={onOpenVoiceMode}
@@ -174,7 +174,7 @@ export default function VoiceInput({
         </div>
       </div>
 
-      <p className="text-center text-xs mt-3" style={{ color: "#8e8ea0" }}>
+      <p className="text-center text-xs mt-3 px-2" style={{ color: "#8e8ea0" }}>
         {t.disclaimer}
       </p>
     </div>

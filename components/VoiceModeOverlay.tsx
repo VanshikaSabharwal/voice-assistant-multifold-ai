@@ -135,7 +135,7 @@ export default function VoiceModeOverlay({ t, onClose, onExchange, speak, stopSp
     >
       <button
         onClick={onClose}
-        className="absolute top-6 right-6 w-10 h-10 rounded-full flex items-center justify-center cursor-pointer text-lg"
+        className="absolute top-4 right-4 sm:top-6 sm:right-6 w-10 h-10 rounded-full flex items-center justify-center cursor-pointer text-lg"
         style={{ background: "#2a2a2a", color: "#ececec" }}
         title={t.voiceModeClose}
       >
@@ -145,7 +145,7 @@ export default function VoiceModeOverlay({ t, onClose, onExchange, speak, stopSp
       <button
         onClick={handleTap}
         disabled={phase === "thinking"}
-        className={`w-36 h-36 rounded-full flex items-center justify-center cursor-pointer transition-colors ${
+        className={`w-28 h-28 sm:w-36 sm:h-36 rounded-full flex items-center justify-center cursor-pointer transition-colors ${
           phase === "listening" ? "recording-pulse" : ""
         }`}
         style={{ background: circleColor }}
@@ -153,16 +153,16 @@ export default function VoiceModeOverlay({ t, onClose, onExchange, speak, stopSp
         <MicGlyph />
       </button>
 
-      <p className="mt-8 text-sm" style={{ color: "#ececec" }}>
+      <p className="mt-8 text-sm text-center px-4" style={{ color: "#ececec" }}>
         {phaseLabel}
       </p>
       {phase === "listening" && (
-        <p className="mt-1 text-xs" style={{ color: "#8e8ea0" }}>
+        <p className="mt-1 text-xs text-center px-4" style={{ color: "#8e8ea0" }}>
           {t.voiceModeTapToStop}
         </p>
       )}
       {error && (
-        <p className="mt-3 text-xs" style={{ color: "#ef4444" }}>
+        <p className="mt-3 text-xs text-center px-4" style={{ color: "#ef4444" }}>
           {error}
         </p>
       )}

@@ -47,6 +47,16 @@ function SpeakerOffIcon() {
   );
 }
 
+function MenuIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <line x1="3" y1="6" x2="21" y2="6" />
+      <line x1="3" y1="12" x2="21" y2="12" />
+      <line x1="3" y1="18" x2="21" y2="18" />
+    </svg>
+  );
+}
+
 function EmptyState({ t }: { t: ReturnType<typeof getTranslation> }) {
   return (
     <div className="flex flex-col items-center justify-center h-full gap-6 px-4">
@@ -100,6 +110,7 @@ export default function ChatPage() {
   const [autoSpeak, setAutoSpeak] = useState(true);
   const [hasLoaded, setHasLoaded] = useState(false);
   const [voiceModeOpen, setVoiceModeOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const bottomRef = useRef<HTMLDivElement>(null);
   const tts = useTextToSpeech();
@@ -323,27 +334,37 @@ export default function ChatPage() {
         activeConversationId={activeConversationId}
         onSelectConversation={handleSelectConversation}
         onDeleteConversation={handleDeleteConversation}
+        isOpen={sidebarOpen}
+        onClose={() => setSidebarOpen(false)}
       />
 
       {/* Main area */}
       <div className="flex flex-col flex-1 min-w-0 h-full">
         {/* Header */}
         <header
-          className="flex items-center justify-between px-6 py-4 flex-shrink-0"
+          className="flex items-center justify-between gap-2 px-3 sm:px-6 py-3 sm:py-4 flex-shrink-0"
           style={{ borderBottom: "1px solid #2a2a2a" }}
         >
-          <div className="flex items-center gap-2">
-            <h2 className="text-sm font-medium" style={{ color: "#ececec" }}>
+          <div className="flex items-center gap-2 min-w-0">
+            <button
+              onClick={() => setSidebarOpen(true)}
+              className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center cursor-pointer md:hidden"
+              style={{ color: "#ececec" }}
+              title="Open menu"
+            >
+              <MenuIcon />
+            </button>
+            <h2 className="text-sm font-medium truncate" style={{ color: "#ececec" }}>
               {t.headerTitle}
             </h2>
             <span
-              className="text-xs px-2 py-0.5 rounded-full"
+              className="hidden sm:inline-block text-xs px-2 py-0.5 rounded-full flex-shrink-0"
               style={{ background: "#2f2f2f", color: "#8e8ea0" }}
             >
               {language === "en" ? "English" : "हिंदी"}
             </span>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
             {tts.supported && (
               <button
                 onClick={() => {
@@ -357,10 +378,10 @@ export default function ChatPage() {
                 title={autoSpeak ? t.muteTitle : t.unmuteTitle}
               >
                 {autoSpeak ? <SpeakerOnIcon /> : <SpeakerOffIcon />}
-                {autoSpeak ? t.voiceOn : t.voiceOff}
+                <span className="hidden sm:inline">{autoSpeak ? t.voiceOn : t.voiceOff}</span>
               </button>
             )}
-            <div className="flex items-center gap-1.5">
+            <div className="hidden sm:flex items-center gap-1.5">
               <span className="inline-block w-2 h-2 rounded-full bg-green-500" />
               <span className="text-xs" style={{ color: "#8e8ea0" }}>
                 {t.connected}
