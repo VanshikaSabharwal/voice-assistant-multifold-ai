@@ -1,0 +1,107 @@
+[
+  {
+    "id": "ac-not-cooling",
+    "equipment": "AC",
+    "problem": "AC is not cooling",
+    "symptoms": ["blowing warm air", "no cold air", "ac not cooling", "running but not cold"],
+    "solution": "1. Check the thermostat is set to COOL mode, not FAN or HEAT. 2. Clean or replace the air filter — a clogged filter is the most common cause. 3. Make sure the outdoor unit isn't blocked by leaves, dust, or furniture. 4. Set the temperature a few degrees lower than room temperature. 5. If it's still not cooling after this, the refrigerant gas may be low — that needs a technician visit, it's not a DIY fix."
+  },
+  {
+    "id": "ac-water-leak",
+    "equipment": "AC",
+    "problem": "AC is leaking water",
+    "symptoms": ["water leaking", "water dripping", "water under unit", "ac dripping"],
+    "solution": "1. Check if the drain pipe is clogged — this is the #1 cause. Use a wet/dry vacuum on the drain outlet to clear it. 2. Make sure the unit is installed level; a tilted unit causes water to overflow instead of draining. 3. Clean the air filter, since ice buildup from poor airflow can melt and overflow. 4. If leaking continues, the condensate pump (in split/window units) may have failed and needs a technician."
+  },
+  {
+    "id": "ac-noise",
+    "equipment": "AC",
+    "problem": "AC is making unusual noise",
+    "symptoms": ["loud noise", "rattling", "buzzing", "clicking sound"],
+    "solution": "1. Turn off the unit and check for loose panels or screws — tighten anything visibly loose. 2. Rattling often means debris stuck in the outdoor fan; clear any leaves or twigs. 3. A buzzing sound right when it turns on/off is usually normal (the compressor starting). 4. Grinding or screeching noises mean a motor bearing issue — stop using the unit and call a technician."
+  },
+  {
+    "id": "ac-remote-not-working",
+    "equipment": "AC",
+    "problem": "AC remote is not working",
+    "symptoms": ["remote not responding", "remote no display", "can't control ac"],
+    "solution": "1. Replace the batteries — this fixes it most of the time. 2. Make sure there's a clear line of sight between the remote and the unit's receiver, no obstruction. 3. Try resetting the remote by removing batteries for 30 seconds and reinserting. 4. If the display is blank even with new batteries, the remote itself may need replacement — they're inexpensive and available from the manufacturer."
+  },
+  {
+    "id": "wm-not-spinning",
+    "equipment": "Washing Machine",
+    "problem": "Washing machine drum is not spinning",
+    "symptoms": ["drum not spinning", "not spinning", "clothes not moving", "machine running but no spin"],
+    "solution": "1. Check you haven't overloaded the machine — too many clothes can stop the drum from spinning, remove some and retry. 2. Make sure the door/lid is fully closed and latched; most machines won't spin with an open door for safety. 3. Check the load is balanced — a lopsided load (all clothes on one side) can trigger a safety stop. 4. If the drum still won't turn, the drive belt may have slipped or broken, which needs a technician."
+  },
+  {
+    "id": "wm-not-draining",
+    "equipment": "Washing Machine",
+    "problem": "Washing machine is not draining",
+    "symptoms": ["water not draining", "standing water", "not draining", "water stuck inside"],
+    "solution": "1. Check the drain hose for kinks or blockages — straighten it out and make sure it's not pinched behind the machine. 2. Clean the drain pump filter (usually a small panel at the bottom front of the machine) — lint and coins often clog it. 3. Make sure the drain hose isn't positioned higher than the machine's max height, or water can't flow out. 4. If cleaned and still not draining, the drain pump motor itself may have failed."
+  },
+  {
+    "id": "wm-leaking",
+    "equipment": "Washing Machine",
+    "problem": "Washing machine is leaking water",
+    "symptoms": ["water leaking", "leaking from bottom", "leaking from door", "water on floor"],
+    "solution": "1. Check the door seal/gasket for tears or trapped debris (a coin or fabric) that breaks the seal. 2. Make sure you're not overfilling with detergent — too much suds can force water out. 3. Inspect the inlet hose connections at the back for looseness and tighten them. 4. If leaking from underneath during the wash cycle, the tub seal or pump may be worn and needs a technician."
+  },
+  {
+    "id": "wm-error-code",
+    "equipment": "Washing Machine",
+    "problem": "Washing machine showing an error code",
+    "symptoms": ["error code", "blinking lights", "e1", "e2", "display error"],
+    "solution": "1. Note down the exact error code shown and check your machine's manual — codes vary by brand. 2. Common codes: door/lid not locked (try closing firmly), water supply issue (check the tap is open), or drain blockage (clean the filter). 3. Try a power reset — unplug for 1 minute and plug back in. 4. If the error persists after a reset, it usually points to a sensor or board issue that needs a technician."
+  },
+  {
+    "id": "fridge-not-cooling",
+    "equipment": "Refrigerator",
+    "problem": "Refrigerator is not cooling",
+    "symptoms": ["fridge not cold", "not cooling", "warm inside", "food spoiling"],
+    "solution": "1. Check the temperature setting hasn't been accidentally changed — set it to the recommended mid-range. 2. Make sure the door is sealing properly; food items blocking the door can prevent a tight seal. 3. Clean the condenser coils at the back/bottom — dust buildup reduces cooling efficiency significantly. 4. Don't overload the fridge; blocked vents inside stop cold air from circulating. 5. If still warm after these checks, the compressor or refrigerant may have an issue — call a technician."
+  },
+  {
+    "id": "fridge-ice-maker",
+    "equipment": "Refrigerator",
+    "problem": "Ice maker is not working",
+    "symptoms": ["no ice", "ice maker not working", "ice maker stuck", "ice tray empty"],
+    "solution": "1. Check the water supply line to the fridge isn't kinked or shut off. 2. Make sure the ice maker switch/arm is in the ON position — it's easy to accidentally bump it off. 3. Check the freezer temperature is cold enough (around -18°C); a too-warm freezer prevents ice formation. 4. If there's a frozen blockage in the line, let it sit unplugged for a few hours to thaw, then retry. 5. Persistent failure usually means the ice maker module needs replacement."
+  },
+  {
+    "id": "fridge-noise",
+    "equipment": "Refrigerator",
+    "problem": "Refrigerator is making loud noise",
+    "symptoms": ["loud noise", "humming", "buzzing", "rattling sound"],
+    "solution": "1. Make sure the fridge is standing level — uneven feet cause vibration and rattling. 2. Check nothing is touching the back of the fridge; even slight contact with a wall can amplify compressor noise. 3. A humming sound is usually the compressor running normally. 4. A loud buzzing or clicking that wasn't there before can indicate a failing compressor or fan motor — worth a technician check if it continues."
+  },
+  {
+    "id": "fridge-door-seal",
+    "equipment": "Refrigerator",
+    "problem": "Refrigerator door is not sealing properly",
+    "symptoms": ["door not closing", "door seal broken", "frost buildup", "warm air inside"],
+    "solution": "1. Clean the door gasket with warm soapy water — food residue and dust often prevent a tight seal. 2. Check for visible tears or cracks in the rubber seal. 3. Test the seal by closing the door on a piece of paper — if it slides out easily, the seal needs replacing. 4. Make sure the fridge is level, since a tilted fridge can cause the door to not close fully under gravity."
+  },
+  {
+    "id": "mw-not-heating",
+    "equipment": "Microwave",
+    "problem": "Microwave is not heating food",
+    "symptoms": ["not heating", "food still cold", "turns on but no heat", "not warming"],
+    "solution": "1. Make sure you've actually set a cook time and pressed start, not just opened/closed the door. 2. Check the door is closing fully and latching — microwaves have safety interlocks that block heating if the door isn't sensed as closed. 3. Test with a cup of water for 1 minute; if it doesn't get warm, the magnetron (the heating component) has likely failed and needs professional repair — this isn't a DIY fix."
+  },
+  {
+    "id": "mw-turntable",
+    "equipment": "Microwave",
+    "problem": "Microwave turntable is not rotating",
+    "symptoms": ["turntable not spinning", "plate not turning", "tray stuck"],
+    "solution": "1. Remove the turntable and check the roller guide underneath is seated correctly in its track. 2. Clean the roller guide and the cavity floor — food spills can jam the rotation mechanism. 3. Make sure the turntable coupler (the small motor-driven nub in the center) isn't broken or worn down. 4. The microwave still works without the turntable spinning, just heat food unevenly until it's fixed — rotate the dish manually halfway through."
+  },
+  {
+    "id": "mw-display-error",
+    "equipment": "Microwave",
+    "problem": "Microwave display is showing an error or not working",
+    "symptoms": ["display blank", "display error", "buttons not responding", "clock not showing"],
+    "solution": "1. Try a power reset — unplug the microwave for 1 minute, then plug it back in. 2. Check the door sensor/switch isn't stuck, since some models blank the display if they detect a faulty door switch. 3. If specific buttons don't respond, the control panel membrane may be worn out from heavy use. 4. A completely blank display after a reset usually means the control board needs replacement."
+  }
+]
